@@ -1,0 +1,365 @@
+NOTE from PE     0: MPP_DOMAINS_SET_STACK_SIZE: stack size set to    32768.
+NOTE from PE     0: MPP_DOMAINS_SET_STACK_SIZE: stack size set to  5000000.
+NOTE from PE     0: You are using the legacy version of the field_table
+ 
+ Dumping coupler_mod/types tree
+types/
+      air_sea_gas_flux_generic/
+            implementation/
+                  ocmip2/
+                        num_parameters = 2
+                  duce/
+                        num_parameters = 1
+                  johnson/
+                        num_parameters = 2
+            num_flags = 0
+            use_atm_pressure = T
+            use_10m_wind_speed = T
+            pass_through_ice = F
+            atm/
+                  name[1] = 'pcair'
+                  name[2] = 'u10'
+                  name[3] = 'psurf'
+                  long_name[1] = 'Atmospheric concentration'
+                  long_name[2] = 'Wind speed at 10 m'
+                  long_name[3] = 'Surface atmospheric pressure'
+                  units[1] = 'mol/mol'
+                  units[2] = 'm/s'
+                  units[3] = 'Pa'
+            ice/
+                  name[1] = 'alpha'
+                  name[2] = 'csurf'
+                  name[3] = 'sc_no'
+                  long_name[1] = 'Solubility w.r.t. atmosphere'
+                  long_name[2] = 'Ocean concentration'
+                  long_name[3] = 'Schmidt number'
+                  units[1] = 'mol/m^3/atm'
+                  units[2] = 'mol/m^3'
+                  units[3] = 'dimensionless'
+            flux/
+                  name[1] = 'flux'
+                  name[2] = 'deltap'
+                  name[3] = 'kw'
+                  name[4] = 'flux0'
+                  long_name[1] = 'Surface flux'
+                  long_name[2] = 'Ocean-air delta pressure'
+                  long_name[3] = 'Piston velocity'
+                  long_name[4] = 'Surface flux no atm'
+                  units[1] = 'mol/m^2/s'
+                  units[2] = 'uatm'
+                  units[3] = 'm/s'
+                  units[4] = 'mol/m^2/s'
+      air_sea_gas_flux/
+            implementation/
+                  ocmip2/
+                        num_parameters = 2
+                  ocmip2_data/
+                        num_parameters = 2
+                  linear/
+                        num_parameters = 3
+            num_flags = 0
+            use_atm_pressure = T
+            use_10m_wind_speed = T
+            pass_through_ice = F
+            atm/
+                  name[1] = 'pcair'
+                  name[2] = 'u10'
+                  name[3] = 'psurf'
+                  long_name[1] = 'Atmospheric concentration'
+                  long_name[2] = 'Wind speed at 10 m'
+                  long_name[3] = 'Surface atmospheric pressure'
+                  units[1] = 'mol/mol'
+                  units[2] = 'm/s'
+                  units[3] = 'Pa'
+            ice/
+                  name[1] = 'alpha'
+                  name[2] = 'csurf'
+                  long_name[1] = 'Solubility from atmosphere times Schmidt number term'
+                  long_name[2] = 'Ocean concentration times Schmidt number term'
+                  units[1] = 'mol/m^3/atm'
+                  units[2] = 'mol/m^3'
+            flux/
+                  name = 'flux'
+                  long_name = 'Surface flux'
+                  units = 'mol/m^2/s'
+      air_sea_deposition/
+            implementation/
+                  dry/
+                        num_parameters = 1
+                  wet/
+                        num_parameters = 1
+            num_flags = 0
+            use_atm_pressure = F
+            use_10m_wind_speed = F
+            pass_through_ice = T
+            atm/
+                  name = 'deposition'
+                  long_name = 'Atmospheric deposition'
+                  units = 'kg/m^2/s'
+            ice/
+                  name = NULL
+                  long_name = NULL
+                  units = NULL
+            flux/
+                  name = 'flux'
+                  long_name = 'Surface deposition'
+                  units = 'mol/m^2/s'
+      land_sea_runoff/
+            implementation/
+                  river/
+                        num_parameters = 1
+            num_flags = 0
+            use_atm_pressure = F
+            use_10m_wind_speed = F
+            pass_through_ice = T
+            atm/
+                  name = 'runoff'
+                  long_name = 'Concentration in land runoff'
+                  units = 'mol/m^3'
+            ice/
+                  name = NULL
+                  long_name = NULL
+                  units = NULL
+            flux/
+                  name = 'flux'
+                  long_name = 'Concentration in land runoff'
+                  units = 'mol/m^3'
+NOTE from PE     0: open_param_file: MOM_input has been opened successfully.
+NOTE from PE     0: open_param_file: MOM_override has been opened successfully.
+NOTE from PE     0: close_param_file: MOM_input has been closed successfully.
+NOTE from PE     0: close_param_file: MOM_override has been closed successfully.
+ ==>Note from atmos_ocean_fluxes_mod(atmos_ocean_fluxes_init): No gas fluxes
+NOTE from PE     0: callTree: ---> ocean_model_init(), ocean_model_MOM.F90
+NOTE from PE     0: open_param_file: MOM_input has been opened successfully.
+NOTE from PE     0: open_param_file: MOM_override has been opened successfully.
+
+WARNING from PE     0: MOM_file_parser : OBC_NUMBER_OF_SEGMENTS over-ridden.  Line: 'OBC_NUMBER_OF_SEGMENTS = 4' in file MOM_override.
+
+
+WARNING from PE     0: MOM_file_parser : DT over-ridden.  Line: 'DT = 50' in file MOM_override.
+
+
+WARNING from PE     0: MOM_file_parser : DT_THERM over-ridden.  Line: 'DT_THERM = 300' in file MOM_override.
+
+ MOM_in domain decomposition
+whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+  X-AXIS =   24  23  23  23  23  24
+  Y-AXIS =   32  31  31  31  31  31  31  31
+ MOM_inc domain decomposition
+whalo =    2, ehalo =    2, shalo =    2, nhalo =    2
+  X-AXIS =   12  12  11  11  12  12
+  Y-AXIS =   16  16  15  15  15  15  16  16
+NOTE from PE     0: diag_manager_mod::diag_manager_init: prepend_date only supported when diag_manager_init is called with time_init present.
+ MOM_in domain decomposition
+whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+  X-AXIS =   24  23  23  23  23  24
+  Y-AXIS =   32  31  31  31  31  31  31  31
+ MOM_in domain decomposition
+whalo =    2, ehalo =    2, shalo =    2, nhalo =    2
+  X-AXIS =   12  12  11  11  12  12
+  Y-AXIS =   16  16  15  15  15  15  16  16
+ MOM_MOSAIC domain decomposition
+whalo =    9, ehalo =    9, shalo =    9, nhalo =    9
+  X-AXIS =   48  46  46  46  46  48
+  Y-AXIS =   64  62  62  62  62  62  62  62
+ MOM_MOSAIC domain decomposition
+whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+  X-AXIS =   24  23  23  23  23  24
+  Y-AXIS =   32  31  31  31  31  31  31  31
+
+WARNING from PE     0: MOM_file_parser : MINIMUM_DEPTH over-ridden.  Line: 'MINIMUM_DEPTH = 5.0' in file MOM_override.
+
+
+WARNING from PE     0: MOM_file_parser : NK over-ridden.  Line: 'NK = 75' in file MOM_override.
+
+
+WARNING from PE     0: MOM_file_parser : OBC_FREESLIP_VORTICITY over-ridden.  Line: 'OBC_FREESLIP_VORTICITY = False' in file MOM_override.
+
+
+WARNING from PE     0: MOM_file_parser : OBC_COMPUTED_VORTICITY over-ridden.  Line: 'OBC_COMPUTED_VORTICITY = True' in file MOM_override.
+
+
+WARNING from PE     0: MOM_file_parser : OBC_FREESLIP_STRAIN over-ridden.  Line: 'OBC_FREESLIP_STRAIN = False' in file MOM_override.
+
+
+WARNING from PE     0: MOM_file_parser : OBC_COMPUTED_STRAIN over-ridden.  Line: 'OBC_COMPUTED_STRAIN = True' in file MOM_override.
+
+
+WARNING from PE     0: MOM_file_parser : OBC_ZERO_BIHARMONIC over-ridden.  Line: 'OBC_ZERO_BIHARMONIC = True' in file MOM_override.
+
+
+WARNING from PE     0: MOM_file_parser : OBC_TIDE_N_CONSTITUENTS over-ridden.  Line: 'OBC_TIDE_N_CONSTITUENTS = 2' in file MOM_override.
+
+
+WARNING from PE     0: MOM_file_parser : OBC_TRACER_RESERVOIR_LENGTH_SCALE_OUT over-ridden.  Line: 'OBC_TRACER_RESERVOIR_LENGTH_SCALE_OUT = 3.0E+04' in file MOM_override.
+
+
+WARNING from PE     0: MOM_file_parser : OBC_TRACER_RESERVOIR_LENGTH_SCALE_IN over-ridden.  Line: 'OBC_TRACER_RESERVOIR_LENGTH_SCALE_IN = 3000.0' in file MOM_override.
+
+
+WARNING from PE     0: MOM_file_parser : BRUSHCUTTER_MODE over-ridden.  Line: 'BRUSHCUTTER_MODE = True' in file MOM_override.
+
+
+WARNING from PE     0: MOM_file_parser : OBC_TIDE_CONSTITUENTS over-ridden.  Line: 'OBC_TIDE_CONSTITUENTS = "M2, S2"' in file MOM_override.
+
+
+WARNING from PE     0: MOM_file_parser : OBC_TIDE_ADD_EQ_PHASE over-ridden.  Line: 'OBC_TIDE_ADD_EQ_PHASE = True' in file MOM_override.
+
+
+WARNING from PE     0: MOM_file_parser : OBC_TIDE_REF_DATE over-ridden.  Line: 'OBC_TIDE_REF_DATE = 2017, 1, 1' in file MOM_override.
+
+
+WARNING from PE     0: Open_file is appending .nc to the filename ./ocean_geometry
+
+ MOM_in domain decomposition
+whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+  X-AXIS =   24  23  23  23  23  24
+  Y-AXIS =   32  31  31  31  31  31  31  31
+ MOM_in domain decomposition
+whalo =    2, ehalo =    2, shalo =    2, nhalo =    2
+  X-AXIS =   12  12  11  11  12  12
+  Y-AXIS =   16  16  15  15  15  15  16  16
+
+WARNING from PE     0: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_002.nc u_segment_002_segment_002
+
+
+FATAL from PE     0: segment data are not on the supergrid
+
+
+WARNING from PE     4: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_002.nc u_segment_002_segment_002
+
+
+FATAL from PE     4: segment data are not on the supergrid
+
+
+
+WARNING from PE    17: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_003.nc u_segment_003_segment_003
+
+
+FATAL from PE    17: segment data are not on the supergrid
+
+
+WARNING from PE    23: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_003.nc u_segment_003_segment_003
+
+
+FATAL from PE    23: segment data are not on the supergrid
+
+WARNING from PE     5: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_002.nc u_segment_002_segment_002
+
+
+FATAL from PE     5: segment data are not on the supergrid
+
+
+WARNING from PE     1: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_002.nc u_segment_002_segment_002
+
+
+FATAL from PE     1: segment data are not on the supergrid
+
+
+WARNING from PE     2: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_002.nc u_segment_002_segment_002
+
+
+FATAL from PE     2: segment data are not on the supergrid
+
+
+WARNING from PE    29: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_003.nc u_segment_003_segment_003
+
+
+WARNING from PE    35: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_003.nc u_segment_003_segment_003
+
+
+FATAL from PE    35: segment data are not on the supergrid
+
+
+WARNING from PE     3: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_002.nc u_segment_002_segment_002
+
+
+FATAL from PE     3: segment data are not on the supergrid
+
+
+WARNING from PE    11: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_003.nc u_segment_003_segment_003
+
+
+FATAL from PE    11: segment data are not on the supergrid
+
+
+FATAL from PE    29: segment data are not on the supergrid
+
+
+WARNING from PE     6: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_004.nc u_segment_004_segment_004
+
+
+WARNING from PE    30: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_004.nc u_segment_004_segment_004
+
+
+FATAL from PE     6: segment data are not on the supergrid
+
+
+FATAL from PE    30: segment data are not on the supergrid
+
+
+WARNING from PE    18: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_004.nc u_segment_004_segment_004
+
+
+FATAL from PE    18: segment data are not on the supergrid
+
+
+
+WARNING from PE    12: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_004.nc u_segment_004_segment_004
+
+
+FATAL from PE    12: segment data are not on the supergrid
+
+WARNING from PE    41: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_003.nc u_segment_003_segment_003
+
+
+WARNING from PE    24: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_004.nc u_segment_004_segment_004
+
+
+FATAL from PE    24: segment data are not on the supergrid
+
+
+FATAL from PE    41: segment data are not on the supergrid
+
+
+WARNING from PE    43: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_001.nc u_segment_001_segment_001
+
+
+FATAL from PE    43: segment data are not on the supergrid
+
+
+WARNING from PE    45: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_001.nc u_segment_001_segment_001
+
+
+FATAL from PE    45: segment data are not on the supergrid
+
+
+WARNING from PE    46: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_001.nc u_segment_001_segment_001
+
+
+WARNING from PE    44: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_001.nc u_segment_001_segment_001
+
+
+FATAL from PE    46: segment data are not on the supergrid
+
+
+WARNING from PE    36: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_004.nc u_segment_004_segment_004
+
+
+FATAL from PE    36: segment data are not on the supergrid
+
+
+WARNING from PE    42: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_001.nc u_segment_001_segment_001
+
+
+FATAL from PE    42: segment data are not on the supergrid
+
+
+FATAL from PE    44: segment data are not on the supergrid
+
+
+WARNING from PE    47: Brushcutter mode sizes      0     0                                                                                                                                                                                                                              INPUT/forcing_obc_segment_001.nc u_segment_001_segment_001
+
+
+FATAL from PE    47: segment data are not on the supergrid
+
